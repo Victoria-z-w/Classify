@@ -1,0 +1,27 @@
+{
+  "version": "v0.0.1",
+  "preprocess": {
+    "image_size": [224,224],
+    "resize_method": "bilinear",
+    "normalize": {
+      "mean": [0.485, 0.456, 0.406],
+      "std": [0.229, 0.224, 0.225]
+    },
+    "to_tensor": "true",
+    "channel_order": "RGB"
+
+  },
+  "model": {
+    "path": "D:\\ClassifyProject\\ClassifyModel.pt",
+    "num_classes": ["complex","frog_eye_leaf_spot","frog_eye_leaf_spot-complex","healthy",
+    "powdery_mildew","powdery_mildew-complex","rust","rust-complex","rust-frog_eye_leaf_spot",
+    "scab","scab-frog_eye_leaf_spot","scab-frog_eye_leaf_spot-complex"],
+    "input_format": "CHW"
+  },
+  "deployment": {
+    "batch_size": 1,
+    "device": "cuda:0",
+    "timeout": 30,
+    "fp16": false
+  }
+}
